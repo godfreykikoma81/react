@@ -5,7 +5,7 @@ export default function App() {
   const [newItem, setNewItem] = useState("")
 
   const [todos, setTodos] = useState([])
-  function handlerSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault()
 
     setTodos((currentTodos) => {
@@ -17,10 +17,11 @@ export default function App() {
   }
   return (
     <>
-      <form action="" onSubmit={handlerSubmit} className='new-item-form'>
+      <form action="" onSubmit={handleSubmit} className='new-item-form'>
         <div className="form-row">
           <label htmlFor="item" className="">New item</label>
-          <input type="text" value={newItem} onChange={e => setNewItem(e.target.value)} id='item' />
+          <input type="text" value={newItem}
+           onChange={e => setNewItem(e.target.value)} id='item'/>
         </div>
         <button className="btn">Add</button>
       </form>
@@ -31,7 +32,7 @@ export default function App() {
             <li>
               <label>
                 <input type="text" type="checkbox" checked={todo.completed} />
-                {todo / title}
+                {todo.title}
               </label>
               <button className="btn btn-danger">Delete</button>
             </li>
